@@ -7,15 +7,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 import recipes.dao.RecipeDao;
+import recipes.entity.Recipe;
 import recipes.exception.DbException;
 
 public class RecipeService {
 	private static final String SCHEMA_FILE = "recipe_scema.sql";
+	private static final String DATA_FILE = "recipe_data.sql";
 	
 	private RecipeDao recipeDao = new RecipeDao();
 	
 	public void createAndPopulateTables() {
 		loadFrontFile(SCHEMA_FILE);
+		loadFrontFile(DATA_FILE);
 	}
 	private void loadFrontFile(String fileName) {
 		String content = readFileContent(fileName); 
@@ -83,5 +86,8 @@ public class RecipeService {
 	}
 	public static void main(String[] args) {
 		new RecipeService().createAndPopulateTables();
+	}
+	public Recipe addRecipe(Recipe recipe) {
+		return recipeDao.insertRecipe(recipe);
 	}
 	}
