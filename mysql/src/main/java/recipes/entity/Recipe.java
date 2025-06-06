@@ -25,7 +25,7 @@ public class Recipe {
 	}
 	@Override
 	public String toString() {
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-mmm-yyyy HH:mm");
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd-mm-yyyy HH:mm");
 		String createTime = Objects.nonNull(createdAt) ? fmt.format(createdAt) : "(null)";
 		
 		String recipe = "";

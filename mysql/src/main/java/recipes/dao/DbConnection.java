@@ -7,10 +7,10 @@ import java.sql.SQLException;
 
 public class DbConnection {
 	private static String HOST = "localhost";
-	private static String PASSWORD = "projects";
+	private static String PASSWORD = "recipes";
 	private static int PORT = 3306;
-	private static String SCHEMA = "projects";
-	private static String USER = "projects";
+	private static String SCHEMA = "recipes";
+	private static String USER = "recipes";
 
 	public static Connection getConnection() {
 		String uri = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s", HOST, PORT, SCHEMA, USER, PASSWORD);

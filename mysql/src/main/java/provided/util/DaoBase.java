@@ -18,6 +18,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
 
+import recipes.entity.Recipe;
+
 /**
  * This class contains utility methods for the DAO class.
  * 

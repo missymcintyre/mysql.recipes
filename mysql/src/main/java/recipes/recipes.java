@@ -41,13 +41,17 @@ public class Recipes {
 					addRecipe();
 					break;
 					
-					
+	/**			case 3:1
+					break;
+		**/			
 				default:
 					System.out.println("\n+ " + operation + " is not valid. Try again");
 					break;
 				}
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
+			
 			System.out.println("\nError: " + e.toString() + "Try again");
 		}
 	}
@@ -56,6 +60,16 @@ public class Recipes {
 		recipeService.createAndPopulateTables();
 		System.out.println("\nTables created and populated!");
 	}
+/**	
+	private void listRecipes() {
+		List<Recipe> recipes = recipeService.fetchRecipes();
+		
+		System.out.println("\nRecipes: ");
+		
+		recipes.forEach(
+				recipe -> System.out.println("  " + recipe.getRecipeId() + "; " + recipe.getRecipeName()));
+	}
+**/	
 	private void addRecipe() {
 		String name = getStringInput("Enter the recipe name");
 		String notes = getStringInput("Enter the recipe notes");

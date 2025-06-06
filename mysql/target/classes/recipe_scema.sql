@@ -6,12 +6,14 @@ DROP TABLE IF EXISTS category;
 DROP TABLE IF EXISTS recipe;
 
 CREATE TABLE recipe (
-	recipe_id INT NOT NULL,	
+	recipe_id INT NOT NULL AUTO_INCREMENT,	
 	recipe_name VARCHAR(128) NOT NULL,
 	notes TEXT,
 	prep_time TIME,
 	cook_time TIME,
-	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+	num_servings INT,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (recipe_id)
 );
 
 CREATE TABLE category (
@@ -47,3 +49,20 @@ CREATE TABLE ingredient (
 	amount DECIMAL(7, 2)
 	
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
