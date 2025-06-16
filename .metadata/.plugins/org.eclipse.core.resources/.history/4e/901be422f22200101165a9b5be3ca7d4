@@ -1,0 +1,168 @@
+package Ages.java;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ages {
+	
+
+    public static void main(String[] args) {
+      
+
+//1. Create an array of int called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
+//
+        int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
+
+        System.out.print("ages: ");
+        for (int age : ages) {
+            System.out.print(age + " ");
+        }
+        System.out.println();
+//a. Programmatically subtract the value of the first element in the array from the value in the last element of the array (i.e. do not use ages[7] in your code). Print the result to the console.  
+//
+        System.out.println(ages[ages.length - 1] - ages[0]);
+        
+//b. Create a new array of int called ages2 with 9 elements (ages2 will be longer than the ages array, and have more elements).  
+//
+        int[] ages2 = {3, 9, 23, 64, 2, 8, 28, 93, 55};
+
+        System.out.print("aes2: ");
+        for (int age : ages2) {
+            System.out.print(age + " ");
+        }
+        System.out.println();
+
+//i. Make sure that there are 9 elements of type int in this new array.  
+//
+//ii. Repeat the subtraction from Step 1.a. (Programmatically subtract the value of the first element in the new array ages2 from the last element of ages2). 
+//
+        System.out.println(ages2[ages2.length - 1] - ages2[0]);
+        
+//iii. Show that using the index values for the elements is dynamic (works for arrays of different lengths).
+//
+//c. Use a loop to iterate through the array and calculate the average age. Print the result to the console.
+        
+
+//2. Create an array of String called names that contains the following values: “Sam”, “Tommy”, “Tim”, “Sally”, “Buck”, “Bob”.
+//
+        String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+        
+//a. Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
+//
+     
+              int totalLetters = 0;
+          
+              for (int i = 0; i < names.length; i++) {
+                  totalLetters += names[i].length();
+              }
+
+              double averageNameLength = (double) totalLetters / names.length;
+              System.out.println(averageNameLength);
+            
+        
+
+//b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
+//
+
+StringBuilder allNames = new StringBuilder();
+
+		for(int i = 0; i < names.length; i++) {
+ 			allNames.append(names[i]);
+ 			
+ 			if (i < names.length - 1) {
+ 				allNames.append(" ");
+     }
+ }
+
+	        System.out.println(allNames.toString());
+	    
+		
+    
+//3. How do you access the last element of any array?
+  //  array[array.length - 1];
+   
+//
+//4. How do you access the first element of any array?
+//    array [0];
+    
+//5. Create a new array of int called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
+
+          
+	        int[] nameLengths = new int[names.length];
+
+            for (int i = 0; i < names.length; i++) {
+                nameLengths[i] = names[i].length();
+            }
+        
+//6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
+//
+
+            int sum = 0;
+
+            for (int i = 0; i < nameLengths.length; i++) {
+                sum += nameLengths[i];
+            }
+
+            System.out.println("Total sum of name lengths: " + sum);
+            
+//7. Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
+//
+                    String result = repeatWord("Goodbye", 5);
+                    System.out.println(result);
+                
+
+//8. Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
+//
+                    System.out.println(fullName("Anne","Smith"));
+                    
+//9. Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
+
+                    System.out.println(isSumGreaterThan100);
+                    
+//
+//10. Write a method that takes an array of double and returns the average of all the elements in the array.
+//
+//11. Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+//
+//12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+//
+//13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+//
+//
+//
+    }// end of main
+    
+    //----------------------------------------------------------------
+  //7. Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
+    //
+        public static String repeatWord(String word, int n) {
+            StringBuilder repeated = new StringBuilder();
+            for (int i = 0; i < n; i++) {
+                repeated.append(word);
+            }
+            return repeated.toString();
+        }
+        
+    //8. Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
+    //
+        public static String fullName(String firstName, String lastName) {
+        	return firstName + " " + lastName;
+        }
+    //9. Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
+    //
+        public static boolean isSumGreaterThan100(int[] numbers) {
+         //   int sum = 0;
+            for (int num : numbers) {
+                sum += num;
+            }
+            return sum > 100;
+        }
+    //10. Write a method that takes an array of double and returns the average of all the elements in the array.
+    //
+    //11. Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+    //
+    //12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+    //
+    //13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+    //
+} // end class

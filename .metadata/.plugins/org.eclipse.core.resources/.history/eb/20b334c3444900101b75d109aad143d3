@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package projects.service;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+
+import projects.dao.ProjectsDao;
+import projects.entity.Project;
+import recipes.entity.Recipe;
+
+
+public class ProjectsService {
+  private ProjectsDao projectDao = new ProjectsDao();
+
+
+  public Project addProject(Project project) {
+    return projectDao.insertProject(project);
+  }
+
+
+public List<Project> fetchProject() {
+	public Project fetchProjectById(Integer projectId) {
+		return projectDao.fetchProjectById(projectId).orElseThrow(() -> new NoSuchElementException("Project with ID= " + projectId + " does not exist."));
+	}
+
+
+}
